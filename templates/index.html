@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo ao Sistema</title>
+    <style>
+        * { box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body {
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        h1 { font-size: 28px; margin-bottom: 10px; color: #007bff; }
+        p { color: #666; margin-bottom: 30px; }
+        
+        .botoes {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            flex: 1;
+        }
+        
+        .btn-login {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-login:hover { background-color: #0056b3; }
+        
+        .btn-cadastro {
+            background-color: #28a745;
+            color: white;
+        }
+        .btn-cadastro:hover { background-color: #218838; }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 12px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Olá! Bem-vindo</h1>
+    <p>Escolha uma das opções abaixo para acessar nossa plataforma segura.</p>
+    
+    <div class="botoes">
+        <a href="/login" class="btn btn-login">Entrar</a>
+        <a href="/cadastro" class="btn btn-cadastro">Criar Conta</a>
+    </div>
+
+    <div class="footer">
+        © 2026 Seu Sistema Inc. Todos os direitos reservados.
+    </div>
+</div>
+
+</body>
+</html>

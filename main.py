@@ -25,9 +25,21 @@ def tela_cadastro(request: Request):
 
 # Tala de login
 @app.get("/login")
-def tela_login(request: Request):
+def tela_logi(request: Request):
     return templates.TemplateResponse(
         request,
         "login.html",
         {"request": request}
     )
+
+# Tela de home
+@app.get("/")
+def home (request: Request):
+    return templates.TemplateResponse(
+        request,
+        "index.html",
+        {"request": request}
+    )
+
+# POST - CRIAR UM USUÀRIO
+

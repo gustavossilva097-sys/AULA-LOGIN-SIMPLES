@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>Login</title>
     <style>
+        /* Estilos idênticos para manter o padrão, mudando apenas as cores */
         * { box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         body {
-            background-color: #2274ee;
+            background-color: #2170e7da;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -15,7 +16,7 @@
             margin: 0;
         }
         .container {
-            background: white;
+            background: rgb(255, 255, 255);
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 8px 24px rgba(0,0,0,0.1);
@@ -29,17 +30,17 @@
         input {
             width: 100%;
             padding: 12px;
-            border: 1px solid #ddd;
+            border: 1px solid #000000;
             border-radius: 6px;
             outline: none;
             transition: 0.3s;
         }
-        input:focus { border-color: #28a745; box-shadow: 0 0 5px rgba(40, 167, 69, 0.2); }
+        input:focus { border-color: #007bff; box-shadow: 0 0 5px rgba(0, 123, 255, 0.2); }
         button {
             width: 100%;
             padding: 12px;
-            background-color: #28a745;
-            color: white;
+            background-color: #007bff;
+            color: rgb(255, 255, 255);
             border: none;
             border-radius: 6px;
             font-size: 16px;
@@ -48,28 +49,28 @@
             transition: 0.3s;
             margin-top: 10px;
         }
-        button:hover { background-color: #218838; transform: translateY(-1px); }
+        button:hover { background-color: #0056b3; transform: translateY(-1px); }
         .footer-link { margin-top: 20px; font-size: 14px; }
-        .footer-link a { color: #28a745; text-decoration: none; font-weight: bold; }
+        .footer-link a { color: #007bff; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Criar Conta</h1>
-    <form action="/cadastro" method="post">
+    <h1>Entrar</h1>
+    <form action="/login" method="post">
         <div class="campo">
             <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required placeholder="seu@email.com">
+            <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
         </div>
         <div class="campo">
             <label for="senha">Senha</label>
-            <input type="password" id="senha" name="senha" required placeholder="Crie uma senha forte">
+            <input type="password" id="senha" name="senha" required placeholder="Digite sua senha">
         </div>
-        <button type="submit">Cadastrar</button>
+        <button type="submit">Entrar no Sistema</button>
     </form>
     <div class="footer-link">
-        Já tem conta? <a href="/login">Faça login</a>
+        Novo por aqui? <a href="/cadastro">Cadastre-se agora</a>
     </div>
 </div>
 
