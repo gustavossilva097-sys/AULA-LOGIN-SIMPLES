@@ -116,3 +116,9 @@ def tela_poslogin(request: Request, db: Session = Depends(get_db)):
         {"request": request, "usuario": user_existente}
     )    
 
+# Logout do sistema - sair
+@app.get("/logout")
+def logout():
+    response = RedirectResponse(url="/login", status_code=303)
+    response.delete_cookie("usuario_id")
+    return response
