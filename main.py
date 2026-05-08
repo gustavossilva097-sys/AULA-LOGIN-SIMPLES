@@ -14,6 +14,13 @@ app = FastAPI(title="Sistema de login simples")
 
 templates = Jinja2Templates(directory="templetes")
 
+# Banco de dados temporário (Dicionário)
+# Ele vai guardar: {"email": {"nome": "NOME", "senha": "SENHA"}}
+
+
+
+usuarios_db = {}
+
 #Rota - método HTTP (get, post)
 
 @app.get("/cadastro")
@@ -47,8 +54,14 @@ def cadastrar_usuario(
     request: Request,
     email: str = Form(...),
     senha: str = Form(...),
+    nome: str = Form(...),
     db: Session = Depends(get_db)
 ):
+
+  # Salvando os três dados juntos  
+    usuarios_db[email] = {"nome": nome, "senha": senha}
+
+
     #Procurar o email no banco de dados .
 
     user_existente = db.query(Usuario).filter_by(email=email).first()
@@ -60,7 +73,7 @@ def cadastrar_usuario(
             {"request": request, "erro": "Email ja cadastrado."}
         )
     #Cria objeto
-    novo_usuario = Usuario(email=email, senha=senha) 
+    novo_usuario = Usuario(email=email, senha=senha, nome=nome)
     db.add(novo_usuario)
     db.commit()
 

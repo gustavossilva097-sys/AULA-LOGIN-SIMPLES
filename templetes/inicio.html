@@ -1,5 +1,20 @@
-<h1> Painel administrativo</h1>
-
-<p> Bem-vindo, {{ usuario.email }}</p>
-
-<a href="/logout">Sair</a>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); text-align: center; }
+        h1 { color: #2170e7; }
+        .btn-sair { margin-top: 20px; display: inline-block; text-decoration: none; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Bem-vindo, {{ usuario.nome }}! 👋</h1>
+        <p>Você acessou o sistema com sucesso.</p>
+        <a href="/login" class="btn-sair">Sair do sistema</a>
+    </div>
+</body>
+</html>
