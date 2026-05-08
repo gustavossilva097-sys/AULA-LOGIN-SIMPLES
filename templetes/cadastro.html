@@ -56,7 +56,9 @@
 <body>
 
 <div class="container">
+
     <h1>Criar Conta</h1>
+
     <form action="/cadastro" method="post">
         <div class="campo">
             <label for="email">E-mail</label>
@@ -68,6 +70,13 @@
         </div>
         <button type="submit">Cadastrar</button>
     </form>
+
+
+    {% if erro %}
+       <p style="color: red"> {{ erro }}</p>
+    {% endif %}
+
+
     <div class="footer-link">
         Já tem conta? <a href="/login">Faça login</a>
     </div>
